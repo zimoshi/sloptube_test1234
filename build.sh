@@ -4,10 +4,10 @@
 mkdir -p bin
 
 # 2. Download the stable x86_64 release archive
-curl -L "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz" -o ffmpeg.tar.xz
+curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz" -o ffmpeg.tar.xz
 
 # 3. Extract forcing tar to treat it as a local file (fixes the 'resolve failed' error)
-tar -xf ffmpeg-release-amd64-static.tar.xz --force-local
+tar -xf ffmpeg.tar.xz --force-local
 
 # 4. Safely move the binaries regardless of the specific version name folder
 mv ffmpeg-*-static/ffmpeg ./bin/
